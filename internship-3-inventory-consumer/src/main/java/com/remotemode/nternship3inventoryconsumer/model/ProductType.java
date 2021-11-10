@@ -8,10 +8,16 @@ public enum ProductType {
     COMPUTER("Computer"),
     TOOLS("Tools"),
     NA("NA");
+    private String type;
 
-    ProductType(String code) {
-
+    ProductType(String type) {
+        this.type = type;
     }
+
+    public String getProductType() {
+        return type;
+    }
+
 
     public static ProductType of(String value) {
         if (Objects.nonNull(value)) {

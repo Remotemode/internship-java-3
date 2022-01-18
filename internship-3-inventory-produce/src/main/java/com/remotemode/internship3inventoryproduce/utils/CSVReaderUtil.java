@@ -1,4 +1,4 @@
-package com.remotemode.internship3inventoryproduce.service;
+package com.remotemode.internship3inventoryproduce.utils;
 
 import com.remotemode.internship3inventoryproduce.model.Inventory;
 import com.remotemode.internship3inventoryproduce.model.ProductType;

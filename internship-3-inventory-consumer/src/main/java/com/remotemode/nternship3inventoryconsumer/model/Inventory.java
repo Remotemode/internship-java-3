@@ -15,7 +15,7 @@ import javax.persistence.*;
 @Table(name = "inventories")
 public class Inventory {
     @Id
-    @Column(name = "inventory_item_id")
+    @Column(name = "inventory_id")
     private String itemId;
     @Column(name = "product_type")
     @Enumerated(EnumType.STRING)
@@ -30,4 +30,7 @@ public class Inventory {
     private String barcode;
     @Column(name = "date")
     private Long accountDate;
+
+    @OneToOne(mappedBy = "inventory")
+    private AssignedInventory assignedInventory;
 }

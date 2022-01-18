@@ -5,6 +5,7 @@ import com.remotemode.nternship3inventoryconsumer.repository.InventoryRepository
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.Optional;
 
 @Component
 public class InventoryService implements IInventoryService {
@@ -25,8 +26,7 @@ public class InventoryService implements IInventoryService {
     }
 
     @Override
-    public Inventory findInventoryByBarcode(String barcode) {
-        return inventoryRepository.findInventoryByBarcode(barcode)
-                .orElseThrow();
+    public Optional<Inventory> findInventoryById(String inventoryId) {
+        return inventoryRepository.findById(inventoryId);
     }
 }

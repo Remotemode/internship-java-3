@@ -7,11 +7,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-import java.util.Objects;
 import java.util.stream.Collectors;
 
 @RestController
@@ -32,16 +30,6 @@ public class InventoryController {
         List<InventoryDto> inventoryDtos = inventories.stream().map(InventoryDto::of).
                 collect(Collectors.toList());
         return new ResponseEntity<>(inventoryDtos, HttpStatus.OK);
-    }
-
-    @GetMapping(value = "/barcode")
-
-    public ResponseEntity<InventoryDto> getInventoryByBarcode(@RequestParam(value = "barcode") String barcode) {
-        Inventory inventoryByBarcode = inventoryService.findInventoryByBarcode(barcode);
-        if (Objects.isNull(inventoryByBarcode)) {
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-        }
-        return new ResponseEntity<>(InventoryDto.of(inventoryByBarcode), HttpStatus.OK);
     }
 }
 

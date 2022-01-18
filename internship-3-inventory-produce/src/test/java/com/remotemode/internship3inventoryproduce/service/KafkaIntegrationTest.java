@@ -4,14 +4,13 @@ import com.remotemode.internship3inventoryproduce.model.Inventory;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.support.SendResult;
 import org.springframework.kafka.test.context.EmbeddedKafka;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.util.ResourceUtils;
 import org.springframework.util.concurrent.ListenableFuture;
+import com.remotemode.internship3inventoryproduce.utils.CSVReaderUtil;
 
 import java.io.DataInputStream;
 import java.io.File;

@@ -1,6 +1,6 @@
 package com.remotemode.internship3inventoryproduce.controller;
 
-import com.remotemode.internship3inventoryproduce.service.CSVReaderUtil;
+import com.remotemode.internship3inventoryproduce.utils.CSVReaderUtil;
 import com.remotemode.internship3inventoryproduce.service.IInventoryService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
